@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.postService.GetPosts()
     .subscribe((posts) => {
       this.posts = posts;
+      this.loading = false;
       console.log('posts: ' + JSON.stringify(this.posts));
     })
   }
