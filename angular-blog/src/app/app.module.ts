@@ -13,6 +13,7 @@ import { EditPostComponent } from './edit-post/edit-post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MastheadComponent } from './masthead/masthead.component';
+import { PreviewPostComponent } from './preview-post/preview-post.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MastheadComponent } from './masthead/masthead.component';
     EditPostComponent,
     NavbarComponent,
     FooterComponent,
-    MastheadComponent
+    MastheadComponent,
+    PreviewPostComponent
   ],
   imports: [
     BrowserModule,

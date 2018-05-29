@@ -7,21 +7,7 @@
 <div class="row" *ngIf="!loading">
   <div class="col-lg-8 col-md-10 mx-auto">
     <div *ngFor="let post of posts">
-
-          <div class="post-preview">
-              <a href="post.html">
-                  <h2 class="post-title" [textContent]="post.title">
-                  </h2>
-                  <h3 class="post-subtitle" [textContent]="post.content">
-                  <!-- Problems look mighty small from 150 miles up -->
-                  </h3>
-              </a>
-              <p class="post-meta">Posted by
-              <a href="#" [textContent]="post.author"></a>
-              on <span [textContent]="post.Created_date"></span></p>
-          </div>
-
-          <!-- <div ng-include="'App/post/post-preview.html'"></div> -->
+          <app-preview-post [post]="post"></app-preview-post>
           <hr>
     </div>
     <!-- Pager -->
