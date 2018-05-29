@@ -10,11 +10,11 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PastPostsComponent } from './past-posts/past-posts.component';
 import { ViewPostComponent } from './view-post/view-post.component';
-import { EditPostComponent } from './edit-post/edit-post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MastheadComponent } from './masthead/masthead.component';
 import { PreviewPostComponent } from './preview-post/preview-post.component';
+import { AuthorPostComponent } from './author-post/author-post.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +24,11 @@ import { PreviewPostComponent } from './preview-post/preview-post.component';
     ContactComponent,
     PastPostsComponent,
     ViewPostComponent,
-    EditPostComponent,
     NavbarComponent,
     FooterComponent,
     MastheadComponent,
-    PreviewPostComponent
+    PreviewPostComponent,
+    AuthorPostComponent
   ],
   imports: [
     BrowserModule,
