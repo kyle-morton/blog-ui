@@ -15,4 +15,8 @@ export class BlogPostService {
     return this.apiService.GetPosts(environment.api.entries);
   }
 
+  public GetPost(id: string) : Observable<BlogPost> {
+    return this.apiService.GetPost(environment.api.entries, id);
+  }
+
 }

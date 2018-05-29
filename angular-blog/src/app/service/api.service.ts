@@ -42,6 +42,16 @@ export class ApiService {
       .pipe(catchError(this.handleError));
   }
 
+  public GetPost(endpoint: string, id: string) : Observable<BlogPost> {
+      return this.http
+      .get(API_URL + endpoint + '/' + id)
+      .pipe(map(response => {
+          var json = response.json();
+          return new BlogPost(json);
+      }))
+      .pipe(catchError(this.handleError));
+  }
+
   //handle any error encounted while sending http request
   private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);
