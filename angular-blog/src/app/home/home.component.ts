@@ -28,11 +28,4 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  public toNewPost(): void {
-    this.router.navigateByUrl('posts');
-  }
-  public toAllPosts(): void {
-    this.router.navigateByUrl('posts');
-  }
-
 }
