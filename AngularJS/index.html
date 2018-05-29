@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="assets/content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="assets/styles/clean-blog.min.css" rel="stylesheet">
+    <link href="assets/styles/app.css" rel="stylesheet">
+
+  </head>
+
+  <body ng-app="AngularApp">
+
+    <div ui-view="navbar"></div>
+    <div ui-view="header"></div>
+    <div ui-view="contentView"></div>
+    <div ui-view="footer"></div>    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/content/jquery/jquery.min.js"></script>
+    <script src="assets/content/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="assets/scripts/clean-blog.min.js"></script>
+
+    <!-- Angular Dependencies -->
+    <script src="assets/scripts/angular.min.js"></script>
+    <script src="assets/scripts/angular-ui-router.min.js"></script>
+    <script src="assets/scripts/angular-resource.min.js"></script>
+    <script src="assets/scripts/ng-file-upload.min.js"></script>
+    <script src="assets/scripts/ng-file-upload-shim.min.js"></script>
+
+    <!-- Angular App -->
+    <script src="app.js"></script>
+    <script src="Constants/constants.js"></script>
+    <script src="Services/api.js"></script>
+    <script src="Services/header.js"></script>
+    <script src="Services/nav.js"></script>
+    <script src="Services/promise.js"></script>
+    <script src="Services/storage.js"></script>
+    <script src="Services/url.js"></script>
+    <script src="Widgets/navbar/navbar.js"></script>
+    <script src="Widgets/footer/footer.js"></script>
+    <script src="Widgets/header/header.js"></script>
+    <script src="App/home/home.js"></script>
+    <script src="App/about/about.js"></script>
+    <script src="App/contact/contact.js"></script>
+    <script src="App/post/create.js"></script>
+    <script src="App/post/post.js"></script>
+    <script src="App/post/history.js"></script>
+    <script src="App/post/postService.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,55 @@
+
+    <!-- Main Content -->
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                <form name="postForm" novalidate>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="Title" name="title" 
+                            ng-model="post.title" required
+                            ng-disabled="submitting">
+                            <!-- <p class="help-block text-danger" 
+                                ng-show="postForm.title.$invalid && (postForm.title.$touched || submitted)">
+                                    Title Required
+                            </p> -->
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Author</label>
+                            <input type="text" class="form-control" placeholder="Author" name="author" ng-model="post.author"
+                             required ng-disabled="submitting">
+                            <!-- <p class="help-block text-danger" 
+                                ng-show="postForm.author.$invalid && (postForm.author.$touched || submitted)">
+                                    Author Required
+                            </p> -->
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Content</label>
+                            <textarea rows="5" class="form-control" placeholder="Body" name="content" ng-model="post.content" 
+                            required ng-disabled="submitting"></textarea>
+                            <!-- <p class="help-block text-danger" 
+                                ng-show="postForm.content.$invalid && (postForm.content.$touched || submitted)">
+                                    Content Required
+                            </p> -->
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group" ng-if="submitting === false">
+                        <button type="button" class="btn btn-primary" ng-click="submit(postForm.$valid);">Create</button>
+                    </div>
+                    <div class="row" ng-if="submitting === true">
+                        <div class="col-12 text-center">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw text-primary"></i>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        
+            <hr>
