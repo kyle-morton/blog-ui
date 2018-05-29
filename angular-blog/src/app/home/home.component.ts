@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { BlogPostService } from '../service/blog-post.service';
 import { BlogPost } from '../models/blog-post';
 
@@ -12,20 +14,25 @@ export class HomeComponent implements OnInit {
   loading: boolean = true;
   posts: BlogPost[];
 
-  constructor(private postService : BlogPostService) { }
+  constructor(private postService : BlogPostService, private router: Router) { }
 
   ngOnInit() {
     this.getPosts();
   }
 
   private getPosts() : void {
-    console.log('getting posts: ' + this.postService);
     this.postService.GetPosts()
     .subscribe((posts) => {
-      this.posts = posts;
+      this.posts = posts.slice(0, 3);
       this.loading = false;
-      console.log('posts: ' + JSON.stringify(this.posts));
     })
+  }
+
+  public toNewPost(): void {
+    this.router.navigateByUrl('posts');
+  }
+  public toAllPosts(): void {
+    this.router.navigateByUrl('posts');
   }
 
 }

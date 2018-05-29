@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPostService } from '../service/blog-post.service';
+import { BlogPost } from 'src/app/models/blog-post';
 
 @Component({
   selector: 'app-past-posts',
@@ -9,6 +10,7 @@ import { BlogPostService } from '../service/blog-post.service';
 export class PastPostsComponent implements OnInit {
 
   loading: boolean = true;
+  posts: BlogPost[];
 
   constructor(private postService : BlogPostService) { }
 
@@ -17,7 +19,15 @@ export class PastPostsComponent implements OnInit {
   }
 
   private getPosts() : void {
-      console.log('getting posts: ' + this.postService);
+    this.postService.GetPosts()
+    .subscribe((posts) => {
+      this.posts = posts.slice(0, 3);
+      this.loading = false;
+    })
+  }
+
+  public load(): void {
+    console.log('loading more posts...');
   }
 
 }

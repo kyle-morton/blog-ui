@@ -12,10 +12,10 @@
     </div>
     <!-- Pager -->
     <div class="clearfix">
-      <a class="btn btn-primary float-left pointer" ng-click="toNew();">
+      <a class="btn btn-primary float-left pointer" (click)="toNewPost()">
         New Post 
         <i class="fa fa-plus" aria-hidden="true"></i></a>
-      <a class="btn btn-primary float-right pointer" ng-click="toHistory();">
+      <a class="btn btn-primary float-right pointer" (click)="toAllPosts()">
         Older Posts &rarr;
       </a>
     </div>
