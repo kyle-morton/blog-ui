@@ -5,5 +5,13 @@
   </div>
 </div>
 <div class="row" *ngIf="!loading">
-  POST
+
+  <div class="col-lg-8 col-md-10 mx-auto">
+      <h2 [textContent]="post.title"></h2>
+      <h3 [textContent]="'By ' + post.author"></h3>
+      <h4 [textContent]="'On ' + post.Created_date"></h4>
+    
+      <p [textContent]="post.content"></p>
+  </div>
+
 </div>

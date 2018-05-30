@@ -5,8 +5,6 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 
-import { BlogPost } from '../models/blog-post';
-
 const API_URL = environment.api.base;
 
 @Injectable({
@@ -16,40 +14,14 @@ export class ApiService {
 
   constructor(private http: Http) { }
 
-  // public get<T>(endpoint: string):  {
-  //   // return this.http
-  //   //   .get(API_URL + endpoint)
-  //   //   .pipe(map(response => {
-  //   //     return response.json();
-  //   //   }))
-  //   //   .pipe(catchError(this.handleError));
-  //     // return this.http
-  //     // .get(API_URL + endpoint)
-  //     // .pipe(map(response => {
-  //     //   return response.json();
-  //     //   // return json.map((todo) => new T(todo));
-  //     // }))
-  //     // .pipe(catchError(this.handleError));
-  // }
-
-  public GetPosts(endpoint: string) : Observable<BlogPost[]> {
-      return this.http
-      .get(API_URL + endpoint)
-      .pipe(map(response => {
-        var json = response.json();
-        return json.map((post) => new BlogPost(post));
-      }))
-      .pipe(catchError(this.handleError));
-  }
-
-  public GetPost(endpoint: string, id: string) : Observable<BlogPost> {
-      return this.http
-      .get(API_URL + endpoint + '/' + id)
-      .pipe(map(response => {
-          var json = response.json();
-          return new BlogPost(json);
-      }))
-      .pipe(catchError(this.handleError));
+  public Get(endpoint: string) : Observable<any> {
+    return this.http
+    .get(API_URL + endpoint)
+    .pipe(map(response => {
+      var json = response.json();
+      return json;
+    }))
+    .pipe(catchError(this.handleError));
   }
 
   //handle any error encounted while sending http request
