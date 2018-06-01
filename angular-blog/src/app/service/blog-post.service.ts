@@ -29,15 +29,9 @@ export class BlogPostService {
 
   public CreatePost(post: BlogPost) : Observable<any> {
 
-    var body = new URLSearchParams();
-    body.set('title', post.title);
-    body.set('author', post.author);
-    body.set('content', post.content);
-
     return this.apiService.Post(
       environment.api.entries, 
-      body.toString(),
-      { headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded') }
+      post
     );
   }
 

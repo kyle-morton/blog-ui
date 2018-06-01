@@ -24,9 +24,9 @@ export class ApiService {
     .pipe(catchError(this.handleError));
   }
 
-  public Post(endpoint: string, data: any, options: any) : Observable<any> {
+  public Post(endpoint: string, data: any) : Observable<any> {
     return this.http
-    .post(API_URL + endpoint, data, options)
+    .post(API_URL + endpoint, data)
     .pipe(catchError(this.handleError));
   }
 
