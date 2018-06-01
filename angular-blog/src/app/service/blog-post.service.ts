@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators'
 import { ApiService } from './api.service';
 import { environment } from '../../environments/environment';
@@ -24,6 +25,20 @@ export class BlogPostService {
     .pipe(map(json => {
       return new BlogPost(json);
     }));
+  }
+
+  public CreatePost(post: BlogPost) : Observable<any> {
+
+    var body = new URLSearchParams();
+    body.set('title', post.title);
+    body.set('author', post.author);
+    body.set('content', post.content);
+
+    return this.apiService.Post(
+      environment.api.entries, 
+      body.toString(),
+      { headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded') }
+    );
   }
 
 }

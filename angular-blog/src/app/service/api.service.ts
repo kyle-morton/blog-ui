@@ -24,6 +24,12 @@ export class ApiService {
     .pipe(catchError(this.handleError));
   }
 
+  public Post(endpoint: string, data: any, options: any) : Observable<any> {
+    return this.http
+    .post(API_URL + endpoint, data, options)
+    .pipe(catchError(this.handleError));
+  }
+
   //handle any error encounted while sending http request
   private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);

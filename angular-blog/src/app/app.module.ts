@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +35,7 @@ import { AuthorPostComponent } from './author-post/author-post.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

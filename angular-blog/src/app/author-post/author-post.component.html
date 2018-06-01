@@ -1,3 +1,31 @@
-<p>
-  author-post works!
-</p>
+
+<!-- Main Content -->
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+    <form novalidate>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" [(ngModel)]="post.title" name="title" class="form-control" placeholder="Title" >
+          </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Author</label>
+                <input type="text" [(ngModel)]="post.author" name="author" class="form-control" placeholder="Author">
+            </div>
+          </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+              <textarea rows="5" [(ngModel)]="post.content" name="content" class="form-control" placeholder="Content"></textarea>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="submit();">Submit</button>
+        </div>
+    </form>
+    </div>
+</div>
