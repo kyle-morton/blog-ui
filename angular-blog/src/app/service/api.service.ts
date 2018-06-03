@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 
 const API_URL = environment.api.base;
@@ -33,7 +33,7 @@ export class ApiService {
   //handle any error encounted while sending http request
   private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);
-    return Observable.throw(error);
+    return throwError(error);
   }
 
 }

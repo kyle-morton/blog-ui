@@ -11,6 +11,10 @@ import { BlogPost } from '../models/blog-post';
 export class AuthorPostComponent implements OnInit {
 
   public post : BlogPost;
+  public processing : boolean = false;
+  public submitted : boolean = false;
+  public success : boolean = false;
+  public failure : boolean = false;
 
   constructor(private postService : BlogPostService) { }
 
@@ -19,10 +23,28 @@ export class AuthorPostComponent implements OnInit {
   }
   
   public submit() : void {
+
+    this.processing = this.submitted = true;
+
     console.log('submitting blog post: ' + JSON.stringify(this.post));
 
     this.postService.CreatePost(this.post)
-    .subscribe(response => console.log('response on new post: ' + JSON.stringify(response)));
+    .subscribe(
+      // response => console.log('response on new post: ' + JSON.stringify(response))
+      response => { // Handle each observable response
+        console.log('result: ' + response)
+        this.processing = false;
+      },
+      error => { //error response code 
+        this.processing = false;
+        this.failure = true
+      },
+      () => { //success response code
+        this.processing = false;
+        this.success = true;
+        
+      }
+    );
   }
 
 }

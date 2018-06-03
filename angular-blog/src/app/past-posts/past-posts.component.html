@@ -1,9 +1,4 @@
-<div class="row" *ngIf="loading">
-  <div class="col-12 text-center">
-      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-      <span class="sr-only">Loading...</span>    
-  </div>
-</div>
+<app-loading *ngIf="loading"></app-loading>
 <div class="row" *ngIf="!loading">
   <div class="col-lg-8 col-md-10 mx-auto">
     <div *ngFor="let post of posts">

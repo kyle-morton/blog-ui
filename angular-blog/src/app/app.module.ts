@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MastheadComponent } from './masthead/masthead.component';
 import { PreviewPostComponent } from './preview-post/preview-post.component';
 import { AuthorPostComponent } from './author-post/author-post.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AuthorPostComponent } from './author-post/author-post.component';
     FooterComponent,
     MastheadComponent,
     PreviewPostComponent,
-    AuthorPostComponent
+    AuthorPostComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

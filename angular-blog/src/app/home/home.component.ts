@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   private getPosts() : void {
     this.postService.GetPosts()
     .subscribe((posts) => {
-      this.posts = posts.slice(0, 3);
+      this.posts = posts.slice(-3);
       this.loading = false;
     })
   }

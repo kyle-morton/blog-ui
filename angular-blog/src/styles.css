@@ -2,3 +2,8 @@
 .pointer {
     cursor: pointer;
 }
+
+input.form-control,
+textarea.form-control {
+    border-radius: 0;
+}
